@@ -14,3 +14,48 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+  .container {
+    position: relative;
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  /* content position */
+  
+  .left-content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right-content {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  /* app styles */
+
+.split-pane {
+    font-family: ShakyHand;
+}
+
+.toolbar-background-md {
+    background-color: wheat;
+}
+
+.item p {
+    color: #D6AB5E;
+}

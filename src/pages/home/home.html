@@ -7,9 +7,33 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="background" padding>
+  <h2 class="center-content">Welcome to Settlers Prime!</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-8 col-md-offset-2>Settlers Prime is an app that makes playing our favourite browser strategy game Settlers Online way more easier and productive. Here we provide players with useful adventure guides, economy charts, constantly updating trade prices, battle simulators and many other things!</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 col-md-8 col-md-offset-2>Choose your platform! We have a website, Chrome extension and Android mobile app. Click on the links below to learn more.</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="center-content" col-12 col-md-4 *ngFor="let platform of platforms">
+        <ion-icon [name]="platform.name" [color]="platform.color"></ion-icon>
+        {{platform.text}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 col-md-8 col-md-offset-2>Register and access more features! Even though you are free to use our app in a guest mode, we recommend to register and get access to such things as economy planner and notifications. Comprehesive list of features is down below.</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="center-content">Features</ion-col>
+      <ion-col col-3 class="center-content">Guest</ion-col>
+      <ion-col col-3 class="center-content">Registered User</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let feature of features">
+      <ion-col col-6>{{feature.name}}</ion-col>
+      <ion-col col-3 class="center-content"><ion-icon [name]="feature.guest ? 'checkmark' : 'close'" [color]="feature.guest ? 'secondary' : 'danger'"></ion-icon></ion-col>
+      <ion-col col-3 class="center-content"><ion-icon name="checkmark" color="secondary"></ion-icon></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
